@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script>
+    $(function () {
+      var sldr = $('.sldr'),
+        sldrContent = sldr.html(),
+        slideWidth = $('.sl_ctr').outerWidth(),
+        slideCount = $('.sldr img').length,
+        prv_b = $('.prv_b'),
+        nxt_b = $('.nxt_b'),
+        sldrInterval = 4500,
+        animateTime = 500,
+        course = 1,
+        margin = - slideWidth;
+      $('.sldr img:last').clone().prependTo('.sldr'); $('.sldr img').eq(1).clone().appendTo('.sldr'); $('.sldr').css('margin-left', -slideWidth); function nxt_bSlide() { interval = window.setInterval(animate, sldrInterval) } function animate() { if (margin == -slideCount * slideWidth - slideWidth) { sldr.css({ 'marginLeft': -slideWidth }); margin = -slideWidth * 2 } else if (margin == 0 && course == -1) { sldr.css({ 'marginLeft': -slideWidth * slideCount }); margin = -slideWidth * slideCount + slideWidth } else { margin = margin - slideWidth * (course) } sldr.animate({ 'marginLeft': margin }, animateTime) } function sldrStop() { window.clearInterval(interval) } prv_b.click(function () { if (sldr.is(':animated')) { return false } var course2 = course; course = -1; animate(); course = course2 }); nxt_b.click(function () { if (sldr.is(':animated')) { return false } var course2 = course; course = 1; animate(); course = course2 }); sldr.add(nxt_b).add(prv_b).hover(function () { sldrStop() }, nxt_bSlide); nxt_bSlide()
+    });
+  </script>
+</head>
+
+<body>
+
+  <header>
+    <div class="bb">
+      <img class="logo1" src="img/Media/logo_1.png" alt="LOGO">
+      <div class="menu-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <nav class="menu">
+      <div class="conent">
+        <div class="grid">
+          <div class="text_head dd1"><a class="text_a" href="#zac">заказ</a></div>
+          <div class="text_head dd1"><a class="text_a" href="#gal">Галерея</a></div>
+          <div class="d"><img class="logo" src="img/Media/logo_1.png" alt="LOGO"></div>
+          <div class="text_head dd1"><a class="text_a" href="#usg">услуги</a></div>
+          <div class="text_head dd1"><a class="text_a" href="#stu">студии</a></div>
+        </div>
+      </div>
+      <div class="bg">
+        <div class="conent">
+          <div class="flex">
+            <div class="fg">
+              <img class="icon" src="img/Media/002--1.png" alt="">
+              <samp class="text_icon"> +7 (423) 275-8-572</samp>
+            </div>
+            <div class="fg">
+              <img class="icon" src="img/Media/envelope.png" alt="">
+              <samp class="text_icon">studiokiss@mail.ru</samp>
+            </div>
+            <div class="fg">
+              <img class="icon" src="img/Media/005--3.png" alt="">
+              <samp class="text_icon">г.Владивосток, ул. Калинина 205, 3 этаж</samp>
+            </div>
+            <div class="fg">
+              <a href="https://vk.com/studio_kiss_vdk"><img class="icon fl" src="img/Media/006--1.png" alt=""></a>
+              <a href="https://www.instagram.com/studio_kiss_vdk/"><img class="icon fl"
+                  src="img/Media/007-instagram.png" alt=""></a>
+              <a href="https://t.me/school_studiokiss"><img class="icon fl" src="img/Media/003--1.png" alt=""></a>
+              <a href="https://www.youtube.com/channel/UCE2nvN2hpGxqrQF68eJjTDQ"><img class="icon fl"
+                  src="img/Media/005-youtube.png" alt=""></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="top_cor">
+      <!-- Галерея работ -->
+      <a name="gal"></a>
+      <div class="conent">
+        <span class="text_h1">Галерея работ</span>
+        <div class="adapevnosug">
+          <div class="adapevnosug-edsa">
+            <input class="adapevnosug-nasav" type="radio" id="adapevnosug-1" name="adapevnosug" aria-hidden="true"
+              hidden="" checked="checked">
+            <div class="adapevnosug-kolas">
+              <img src="img/Media/galeri/lav-2-1024x683.jpg">
+            </div>
+            <input class="adapevnosug-nasav" type="radio" id="adapevnosug-2" name="adapevnosug" aria-hidden="true"
+              hidden="">
+            <div class="adapevnosug-kolas">
+              <img src="img/Media/galeri/semya-4-1024x683.jpg">
+            </div>
+            <input class="adapevnosug-nasav" type="radio" id="adapevnosug-3" name="adapevnosug" aria-hidden="true"
+              hidden="">
+            <div class="adapevnosug-kolas">
+              <img src="img/Media/galeri/lav-1024x683.jpg">
+            </div>
+            <label for="adapevnosug-3" class="vealulu-kadsan prev nedsug-1 cg">&nbsp;</label>
+            <label for="adapevnosug-2" class="vealulu-kadsan next nedsug-1 cg1">&nbsp;</label>
+            <label for="adapevnosug-1" class="vealulu-kadsan prev nedsug-2 cg">&nbsp;</label>
+            <label for="adapevnosug-3" class="vealulu-kadsan next nedsug-2 cg1">&nbsp;</label>
+            <label for="adapevnosug-2" class="vealulu-kadsan prev nedsug-3 cg">&nbsp;</label>
+            <label for="adapevnosug-1" class="vealulu-kadsan next nedsug-3 cg1">&nbsp;</label>
+            <ol class="esamon-getusa">
+              <li>
+                <label for="adapevnosug-1" class="adapevnosug-bullet">&nbsp;</label>
+              </li>
+              <li>
+                <label for="adapevnosug-2" class="adapevnosug-bullet">&nbsp;</label>
+              </li>
+              <li>
+                <label for="adapevnosug-3" class="adapevnosug-bullet">&nbsp;</label>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <!-- наши студии -->
+
+
+      <div class="main_bg1"></div>
+
+      <div class="conent">
+        <a name="stu"></a>
+        <div>
+          <span class="text_h1">наши студии</span>
+        </div>
+
+        <div class="main_fs">
+          <div class="card">
+            <div>
+              <img class="img_card" src="img/Media/white/white-2.jpg" alt="">
+              <samp class="card-title">зал white</samp>
+              <div class="card_hover">
+                <div class="df">
+                  <span class="sp">Зал White. Большой и светлый зал White — самое подходящее место для создания
+                    индивидуальных, семейных и свадебных фотографий, а также проведения праздников и сборов невесты! Зал
+                    White — это одно большое пространство, а не отдельные «зоны», вы арендуете весь зал целиком, вне
+                    зависимости от того, где хотите снимать. Не забудьте вернуть все после съемки на свои места.</span>
+                  <samp class="sp1">Стоимость аренды 2200 руб/час</samp>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="card">
+            <div>
+              <img class="img_card" src="img/Media/loft/img_4864.jpg" alt="">
+              <samp class="card-title">зал loft</samp>
+              <div class="card_hover">
+                <div class="df">
+                  <span class="sp">Зал Loft. Брутальный зал лофт отлично подойдет как для индивидуальных съемок, так и
+                    стильных лав-стори и семейных съемок, идеален для сборов жениха и других мужских портретов. Съемки в
+                    белье, снятые здесь, будут смотреться особенно вызывающе.</span>
+                  <samp class="sp1">Стоимость аренды 2000 руб/час</samp>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div>
+              <img class="img_card" src="img/Media/grimerka/unnamed (2).jpg" alt="">
+              <samp class="card-title">зал Гримерка</samp>
+              <div class="card_hover">
+                <div class="df">
+                  <span class="sp">Зал Гримерка. Вы также можете воспользоваться гримерными столами (5 мест).Пожалуйста,
+                    заранее уточняйте возможность бронирования гримерок перед съемкой в залах через администратора
+                    студии.</span>
+                  <samp class="sp1">Стоимость аренды 500 руб/час.</samp>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="conent">
+        <div>
+          <span class="text_h1">Заказать мероприятие</span>
+        </div>
+        <a name="zac"></a>
+        <img class="z_form_bg" src="img/Media/galeri/individualnye-8-1024x682.jpg" alt="">
+        <div class="g_form_bg">
+          <form class="z_form">
+            <frameset class="ff">
+              <div class="dd">
+                <legend class="legend">Мероприятие </legend>
+                <select class="select" name="" id="">
+                  <option class="option">Свадьба</option>
+                  <option class="option">День рождения</option>
+                  <option class="option">Мастер-класс</option>
+                  <option class="option">Мастер-класс</option>
+                  <option class="option">Корпоратив</option>
+                  <option class="option">Сбор невесты</option>
+                  <option class="option">Фотосессия</option>
+                </select>
+              </div>
+              <div class="dd m">
+                <legend class="legend">ФИО</legend>
+                <input class="text_i" type="text" name="" id="" placeholder="Петрович Александер Анатоливич ">
+              </div>
+              <div class="dd m">
+                <legend class="legend">телефон</legend>
+                <input class="text_i1" type="text" name="" id="" placeholder="+7(xxx)-xxx-xx-xx">
+              </div>
+              <div class="dd m">
+                <legend class="legend">email</legend>
+                <input class="text_i2" type="email" name="" id="" placeholder="xxxxxxxx@gmail.com">
+              </div>
+              <div class="dd m">
+                <legend class="legend">дата </legend>
+                <input class="text_i2" type="date" name="" id="" placeholder="дд.мм.гггг">
+              </div>
+              <input class="submut" type="submit" value="Заказать">
+            </frameset>
+          </form>
+        </div>
+      </div>
+      <div class="main_bg"></div>
+      <div class="conent">
+        <div>
+          <span class="text_h1">наши услуги</span>
+        </div>
+        <a name="usg"></a>
+        <div class="main_fs">
+          <div class="card1">
+            <div>
+              <img class="img_card1" src="img/Media/ysludi/individualnye-10-1024x682.jpg" alt="">
+              <samp class="card-title1">Индивидуальная<br>фотосессия </samp>
+              <div class="fgh">
+                <p class="text_p">6900 руб/час</p>
+                <input class="sum" type="submit" value="Заказать">
+              </div>
+            </div>
+          </div>
+          <div class="card1">
+            <div>
+              <img class="img_card1" src="img/Media/ysludi/semya-2-1024x682.jpg" alt="">
+              <samp class="card-title1">Семейная и детская<br>фотосессия </samp>
+              <div class="fgh">
+                <p class="text_p">6500 руб/час</p>
+                <input class="sum" type="submit" value="Заказать">
+              </div>
+            </div>
+          </div>
+          <div class="card1">
+            <div>
+              <img class="img_card1" src="img/Media/ysludi/sv-2-1024x682.jpg" alt="">
+              <samp class="card-title1">Свадебная <br>фотосессия </samp>
+              <div class="fgh">
+                <p class="text_p">6500 руб/час</p>
+                <input class="sum" type="submit" value="Заказать">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </main>
+
+  <footer class="footer">
+    <div class="conent">
+      <span class="text_h2">Контакты</span>
+      <div class="footer_f">
+        <div class="flex1">
+          <div class="fg">
+            <img class="icon" src="img/Media/002--1.png" alt="">
+            <samp class="text_icon"> +7 (423) 275-8-572</samp>
+          </div>
+          <div class="fg fom">
+            <img class="icon" src="img/Media/envelope.png" alt="">
+            <samp class="text_icon">studiokiss@mail.ru</samp>
+          </div>
+          <div class="fg fom">
+            <img class="icon" src="img/Media/005--3.png" alt="">
+            <samp class="text_icon">г.Владивосток, ул. Калинина 205, 3 этаж</samp>
+          </div>
+          <div class="fg fom">
+            <a href="https://vk.com/studio_kiss_vdk"><img class="icon1 fl" src="img/Media/006--1.png" alt=""></a>
+            <a href="https://www.instagram.com/studio_kiss_vdk/"><img class="icon1 fl" src="img/Media/007-instagram.png"
+                alt=""></a>
+            <a href="https://t.me/school_studiokiss"><img class="icon1 fl" src="img/Media/003--1.png" alt=""></a>
+            <a href="https://www.youtube.com/channel/UCE2nvN2hpGxqrQF68eJjTDQ"><img class="icon1 fl"
+                src="img/Media/005-youtube.png" alt=""></a>
+          </div>
+        </div>
+        <div>
+          <span class="footer_o">O нас</span>
+          <span class="footer_o1">StudioKiss – это забота, красота и атмосфера. Арендуйте залы студии для своей
+            фото/видео съёмки или мероприятия. Также вы можете воспользоваться услугами наших специалистов – фотографов,
+            визажистов, стилистов. Фотошкола StudioKiss – одна из лучших в городе. Доверяйте себя профессионалам.</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+<script>
+  let menuBtn = document.querySelector('.menu-btn');
+  let menu = document.querySelector('.menu');
+
+  menuBtn.addEventListener('click', function () {
+    menuBtn.classList.toggle('active');
+    menu.classList.toggle('active');
+  })
+</script>
+
+</html>
